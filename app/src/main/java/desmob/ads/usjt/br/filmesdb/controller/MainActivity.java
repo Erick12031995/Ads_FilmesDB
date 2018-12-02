@@ -19,6 +19,7 @@ public class MainActivity extends Activity  {
     private String genero;
 
    // public static final String CHAVE = "desmob.ads.usjt.br.filmesdb.controller.chave";
+    // Testando Commit
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
