@@ -18,6 +18,7 @@ import java.util.TreeSet;
 import desmob.ads.usjt.br.filmesdb.R;
 import desmob.ads.usjt.br.filmesdb.model.Genero;
 import desmob.ads.usjt.br.filmesdb.model.GeneroDAO;
+// Aqui tambem teve alteracao
 
 public class ListaGeneroActivity extends Activity {
 

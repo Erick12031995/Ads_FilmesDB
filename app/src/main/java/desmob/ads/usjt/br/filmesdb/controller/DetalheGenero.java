@@ -10,6 +10,9 @@ import desmob.ads.usjt.br.filmesdb.R;
 import desmob.ads.usjt.br.filmesdb.model.Genero;
 import desmob.ads.usjt.br.filmesdb.model.Util;
 
+// Commit errado - Deveria ter commit and Push ---------
+// Re-Commitnado...
+
 public class DetalheGenero extends Activity {
     private TextView nomeGenero, descricao, diretor, data, popularidade;
     private ImageView foto;

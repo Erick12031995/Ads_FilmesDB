@@ -16,6 +16,7 @@ import desmob.ads.usjt.br.filmesdb.R;
 import desmob.ads.usjt.br.filmesdb.model.Genero;
 import desmob.ads.usjt.br.filmesdb.model.Util;
 
+// -- Aqui tambem teve alteracao
 public class GeneroAdapter extends BaseAdapter{
 
     private ArrayList<Genero> generos;
