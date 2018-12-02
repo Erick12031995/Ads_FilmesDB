@@ -31,7 +31,7 @@ public class ListaGeneroActivity extends Activity {
         activity = this;
         setContentView(R.layout.activity_lista_genero);
 
-        Genero genero = new Genero();
+        Genero  genero = new Genero();
 
         Intent intent = getIntent();
         String chave = intent.getStringExtra(MainActivity.GENERO);
@@ -63,7 +63,7 @@ public class ListaGeneroActivity extends Activity {
         if(chave !=null && chave.length() > 0){
             resultado = new ArrayList<>();
             ArrayList<Genero> lista = listaGenero();
-            for(Genero genero:lista){
+            for(Genero genero :lista){
                 if(genero.getNome().toUpperCase().contains(chave.toUpperCase())){
                     resultado.add(genero);
                 }
@@ -78,9 +78,9 @@ public class ListaGeneroActivity extends Activity {
     private ArrayList<Genero> listaGenero(){
         ArrayList<Genero>lista = new ArrayList<>();
         Genero[] generos1 = GeneroDAO.getGenero();
-        for(Genero genero:generos1){
-            lista.add(genero);
-            System.out.println(genero);
+        for(Genero filme :generos1){
+            lista.add(filme);
+            System.out.println(filme);
         }
         return lista;
     }

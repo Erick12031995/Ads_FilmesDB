@@ -37,22 +37,38 @@ public class GeneroAdapter extends BaseAdapter{
 
     @Override
     public View getView(int i, View view, ViewGroup viewGroup){
-        LayoutInflater inflater = (LayoutInflater)
-                context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View linha = view;
+        if(linha == null) {
 
-        View linha = inflater.inflate(R.layout.linha_genero, viewGroup, false);
-        ImageView fotoGenero = linha.findViewById(R.id.foto_genero);
-        TextView linhaNome = linha.findViewById(R.id.linha_nome);
-        TextView linhaDetalhe = linha.findViewById(R.id.linha_detalhe);
+            LayoutInflater inflater = (LayoutInflater)
+                    context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+
+            linha = inflater.inflate(R.layout.linha_genero, viewGroup, false);
+
+            ImageView fotoGenero = (ImageView)linha.findViewById(R.id.foto_genero);
+            TextView linhaNome = (TextView)linha.findViewById(R.id.linha_nome);
+            TextView linhaDetalhe = (TextView)linha.findViewById(R.id.linha_detalhe);
+
+            ViewHolder holder = new ViewHolder(fotoGenero, linhaNome, linhaDetalhe);
+            linha.setTag(holder);
+        }
 
         Genero genero = generos.get(i);
+        ViewHolder holder = (ViewHolder)linha.getTag();
 
-        linhaNome.setText(genero.getNome());
-        linhaDetalhe.setText(genero.getDescricao());
+        holder.getLinha1().setText((genero.getNome() + " - ID " + genero.getId()));
+        holder.getLinha2().setText((genero.getNomeDiretor() + " - " + genero.getData()));
 
-       //  Drawable drawable = Util.getDrawable(context, genero.getImagem());
+            /*
+            linhaNome.setText(filme.getNome());
+            linhaDetalhe.setText(filme.getDescricao());
+            */
 
-        // fotoGenero.setImageDrawable(drawable);
+        Drawable drawable = Util.getDrawable(context, genero.getGenero());
+
+        holder.getImagem().setImageDrawable(drawable);
+
+        //fotoGenero.setImageDrawable(drawable);
 
         return linha;
     }
